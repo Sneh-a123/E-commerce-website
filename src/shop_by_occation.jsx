@@ -5,7 +5,7 @@ import image3 from "./assets/occasional_saree/Gifting.webp";
 import image4 from "./assets/occasional_saree/Party_Wear.webp";
 
 const Shop_by_occation = () => {
-  const images = [image1, image2, image3, image4, image2];
+  const images = [image1, image2, image3, image4];
 
   return (
     <section className="p-4 md:p-8">
