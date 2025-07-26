@@ -26,22 +26,24 @@ const Our_Bestsellers = () => {
     ]
     return (
         <section className="p-4">
-            <div className="bg-white rounded-2xl text-white w-full p-3 h-auto md:h-[300px] flex items-center justify-center shadow-lg">
-                <h1 className="font-bold text-black text-xl md:text-2xl">Our Bestsellers</h1>
-            </div>
+           <div className="bg-white rounded-2xl shadow-lg py-4 px-6 text-center">
+        <h1 className="font-bold text-black text-xl md:text-3xl">
+          Our Bestsellers
+        </h1>
+      </div>
             <div className="flex-col md:flex-row items-center justify-center gap-4 space-y-5 mt-4">
                 {/* Add your bestsellers content here */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                     {bestsellers.map((item) => (
-                        <div key={item.id} className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
+                        <a href=""><div key={item.id} className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
                             <img src={item.img} alt={item.name} className="w-full h-auto rounded-lg mb-2" />
                             <h2 className="text-sm font-semibold">{item.name}</h2>
                             <p className="text-gray-600">{item.price}</p>
-                        </div>
+                        </div></a>
                     ))}
                 </div>
                 <div className="flex justify-center">
-                    <a href=""><button className="bg-red-700 text-white font-bold text-center px-20 py-2">View All</button></a>
+                    <a href=""><button className="bg-red-700 text-white font-bold text-center px-20 py-2 cursor-pointer">View All</button></a>
                 </div>
             </div>
         </section>

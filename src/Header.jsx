@@ -4,29 +4,40 @@ const Header = () => {
   return (
     <>
       {/* Top Navigation Bar */}
-      <div className="bg-white w-full h-[70px] flex items-center justify-between px-4 py-5">
-        {/* Hamburger Icon - Visible only on small screens */}
-        <i className="fa-solid fa-bars-staggered text-xl block md:hidden"></i>
+      <div className="bg-white w-full h-[70px] flex items-center justify-between px-4 py-5 shadow relative">
+        
+        {/* LEFT SECTION - Hamburger + Logo */}
+        <div className=" p-4 flex justify-between items-center">
+          <div className="block lg:hidden">
+            <i className="fa-solid fa-bars-staggered text-xl text-red-500"></i>
+          </div>
+          <h1 className="text-xl font-bold">Logo</h1>
+        </div>
 
-        {/* Logo */}
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold">LOGO</h1>
 
-        {/* Icons - Heart & Cart */}
-        <div className="flex items-center gap-4">
-            <i class="fa-solid fa-user"></i>
+        {/* CENTER MENU - only for large screens */}
+        <div className="hidden lg:flex items-center gap-10 text-sm md:text-base text-gray-700 font-medium absolute left-1/2 -translate-x-1/2">
+          <a href="#" className="hover:text-red-500 transition">Category</a>
+          <a href="#" className="hover:text-red-500 transition">BestSarees</a>
+          <a href="#" className="hover:text-red-500 transition">LatestSarees</a>
+          <a href="#" className="hover:text-red-500 transition">ShopOccasionly</a>
+          <a href="#" className="hover:text-red-500 transition">Contact Us</a>
+        </div>
+
+        {/* RIGHT ICONS */}
+        <div className="flex items-center gap-4 text-gray-700">
+          <i className="fa-solid fa-user text-base sm:text-lg"></i>
           <i className="fa-regular fa-heart text-base sm:text-lg"></i>
           <i className="fa-solid fa-cart-shopping text-base sm:text-lg"></i>
         </div>
       </div>
 
       {/* Search Bar */}
-      <div className="px-3 py-2 md:px-6 md:py-3 bg-white">
+      <div className="px-3 py-2 md:px-6 md:py-3 flex justify-center bg-amber-100 shadow-sm">
         <input
           type="text"
-          name="search"
-          id="search"
-          placeholder="Search for items..."
-          className="w-full h-[35px] px-3 border-2 border-gray-300 rounded-md text-sm md:text-base"
+          placeholder="🔎 Search for items..."
+          className="w-full md:w-[50%] h-[35px] px-3 border-2 border-gray-300 rounded-md text-sm md:text-base focus:outline-none focus:border-red-500"
         />
       </div>
     </>

@@ -46,9 +46,11 @@ const testinomial = () => {
     return (
         <>
             <section className="p-4 space-y-5">
-                <div className="bg-white rounded-2xl text-white w-full p-3 h-auto md:h-[300px] flex items-center justify-center shadow-lg">
-                    <h1 className="font-bold text-black text-xl md:text-2xl">Testimonials</h1>
-                </div>
+                <div className="bg-white rounded-2xl shadow-lg py-4 px-6 text-center">
+        <h1 className="font-bold text-black text-xl md:text-3xl">
+          Testinomial
+        </h1>
+      </div>
                 <div className="w-[100%] px-4 py-8 bg-gray-50">
                     <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">What Our Clients Say</h2>
                     <div

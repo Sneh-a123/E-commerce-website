@@ -23,11 +23,16 @@ const Hero_section = () => {
     
     {/* Left Side */}
     <div className="w-full md:w-[50%] px-3 text-center flex flex-col items-center justify-center gap-4 py-4">
-      <img src={Tag} className="w-[60%] md:w-[70%]" alt="" />
-      <h1 className="font-bold text-xl md:text-2xl">Fashion Sale for Women's</h1>
-      <button className="bg-[#ffd782] font-semibold text-black px-4 py-2 text-[16px] md:text-[20px] rounded-2xl">
+      <div className="flex items-center justify-center md:justify-start ">
+        <img src={Tag} className="w-[60%] md:w-[20%] rotate-[10deg] transition-transform duration-500 hover:rotate-[-10deg]" alt="" />
+        <div className="items-center justify-center md:ml-33 hidden md:block">
+          <span className="text-6xl">😀</span>
+        </div>
+      </div>
+      <h1 className="font-bold text-xl md:text-4xl">Fashion Sale for Women's</h1>
+      <a href=""><button className="bg-[#ffd782] font-semibold text-black px-4 py-2 text-[16px] md:text-[20px] rounded-2xl transition-all ease-in-out hover:scale-130 cursor-pointer ">
         Shop Now
-      </button>
+      </button></a>
     </div>
 
     {/* Right Side (Slider) */}
