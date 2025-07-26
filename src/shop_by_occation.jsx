@@ -17,7 +17,7 @@ const Shop_by_occation = () => {
       </div>
 
       {/* Image Grid */}
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="mt-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
         {images.map((image, index) => (
          <a href=""> <div
             key={index}

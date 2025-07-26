@@ -33,7 +33,7 @@ const Our_Bestsellers = () => {
       </div>
             <div className="flex-col md:flex-row items-center justify-center gap-4 space-y-5 mt-4">
                 {/* Add your bestsellers content here */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {bestsellers.map((item) => (
                         <a href=""><div key={item.id} className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
                             <img src={item.img} alt={item.name} className="w-full h-auto rounded-lg mb-2" />
