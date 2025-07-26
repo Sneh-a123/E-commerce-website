@@ -35,7 +35,7 @@ const Our_Bestsellers = () => {
                 {/* Add your bestsellers content here */}
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {bestsellers.map((item) => (
-                        <a href=""><div key={item.id} className="bg-[#801718] shadow-md rounded-lg p-4 flex flex-col items-center">
+                        <a href=""><div key={item.id} className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
                             <img src={item.img} alt={item.name} className="w-full h-auto rounded-lg mb-2" />
                             <h2 className="text-sm font-semibold">{item.name}</h2>
                             <p className="text-gray-600">{item.price}</p>
