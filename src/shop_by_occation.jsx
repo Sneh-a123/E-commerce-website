@@ -5,7 +5,7 @@ import image3 from "./assets/occasional_saree/Gifting.webp";
 import image4 from "./assets/occasional_saree/Party_Wear.webp";
 
 const Shop_by_occation = () => {
-  const images = [image1, image2, image3, image4];
+  const images = [image1, image2, image3, image4, image2];
 
   return (
     <section className="p-4 md:p-8">
@@ -17,7 +17,7 @@ const Shop_by_occation = () => {
       </div>
 
       {/* Image Grid */}
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {images.map((image, index) => (
          <a href=""> <div
             key={index}
