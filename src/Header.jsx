@@ -4,16 +4,20 @@ const Header = () => {
   return (
     <>
       {/* Top Navigation Bar */}
-      <div className="bg-white w-full h-[70px] flex items-center justify-between px-4 py-5 shadow relative">
+      <div className="bg-white w-full h-[70px] flex items-center px-4 py-5 shadow relative">
         
-        {/* LEFT SECTION - Hamburger + Logo */}
-        <div className=" p-4 flex justify-between items-center">
-          <div className="block lg:hidden">
+        {/* Hamburger + Logo */}
+        <div className="flex items-center justify-center w-full relative lg:w-auto">
+          {/* Hamburger icon - visible only on small screens */}
+          <div className="absolute left-0 lg:hidden">
             <i className="fa-solid fa-bars-staggered text-xl text-red-500"></i>
           </div>
-          <h1 className="text-xl font-bold">Logo</h1>
-        </div>
 
+          {/* Logo - centered on mobile, left on lg */}
+          <h1 className="text-lg sm:text-xl md:text-2xl font-bold absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:left-auto lg:text-left">
+            LOGO
+          </h1>
+        </div>
 
         {/* CENTER MENU - only for large screens */}
         <div className="hidden lg:flex items-center gap-10 text-sm md:text-base text-gray-700 font-medium absolute left-1/2 -translate-x-1/2">
@@ -25,7 +29,7 @@ const Header = () => {
         </div>
 
         {/* RIGHT ICONS */}
-        <div className="flex items-center gap-4 text-gray-700">
+        <div className="ml-auto flex items-center gap-4 text-gray-700">
           <i className="fa-solid fa-user text-base sm:text-lg"></i>
           <i className="fa-regular fa-heart text-base sm:text-lg"></i>
           <i className="fa-solid fa-cart-shopping text-base sm:text-lg"></i>
