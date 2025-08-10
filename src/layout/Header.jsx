@@ -73,7 +73,7 @@ const Header = () => {
           {/* User Icon Dropdown */}
           <div className="relative group cursor-pointer">
             <i className="fa-solid fa-user text-lg hover:text-red-500 transition-colors"></i>
-            <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-md p-4 hidden group-hover:block z-10 space-y-2 w-36 text-sm">
+            <div className="absolute right-0 bg-white shadow-lg rounded-md p-4 hidden group-hover:block z-10 space-y-2 w-36 text-sm">
               <Link to="/login" className="block text-gray-800 hover:text-red-500">Login</Link>
               <Link to="/register" className="block text-gray-800 hover:text-red-500">Register</Link>
             </div>
