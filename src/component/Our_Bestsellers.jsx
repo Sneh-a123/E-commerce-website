@@ -19,16 +19,16 @@ const Our_Bestsellers = () => {
   navigate("/products", { state: { product } }); // ✅ product naam se bhejo
 };
     const bestsellers = [
-        { id: 1, img: img1, name: "Baby Blue Chiffon Floral Printed Saree – Elegant, Lightweight & Stylish- Rang Panchami", price: "₹ 3,299.00" },
-        { id: 2, img: img2, name: "Baby Pink Georgette Saree with Graceful Lace Border - Kitkat", price: "₹ 1,680.00" },
-        { id: 3, img: img3, name: "Beige Chiffon Saree with Resham & Stone Work - Aishwrya", price: "₹ 4,960.00" },
-        { id: 4, img: img4, name: "Black Georgette Saree with Multicolor Abstract Print - Shamli", price: "₹ 1,930.00" },
-        { id: 5, img: img5, name: "Black Silk Printed Saree with Striped Pattern – Traditional Yet Trendy - Rang Panchami", price: "₹ 2,249.00" },
-        { id: 6, img: img6, name: "Blue Crepe Silk Saree with Foil Work - Chameli", price: "₹ 2,380.00" },
-        { id: 7, img: img7, name: "Blue Floral Georgette Saree - Gulabo", price: "₹ 1,745.00" },
-        { id: 8, img: img8, name: "Blue Floral Georgette Saree - Gulabo", price: "₹ 1,745.00" },
-        { id: 9, img: img9, name: "Blue Striped Chiffon Saree – Soft, Flowing & Stylish - Rang Panchami", price: "₹ 2,749.00" },
-        { id: 10, img: img10, name: "Green Chiffon Butti Printed Saree – Soft, Flowing & Stylish Look - Rang Panchami", price: "₹ 2,799.00" }
+        { id: 1, img: img1, name: "Baby Blue Chiffon Floral Printed Saree – Elegant, Lightweight & Stylish- Rang Panchami", Price: "₹ 3,299.00" },
+        { id: 2, img: img2, name: "Baby Pink Georgette Saree with Graceful Lace Border - Kitkat", Price: "₹ 1,680.00" },
+        { id: 3, img: img3, name: "Beige Chiffon Saree with Resham & Stone Work - Aishwrya", Price: "₹ 4,960.00" },
+        { id: 4, img: img4, name: "Black Georgette Saree with Multicolor Abstract Print - Shamli", Price: "₹ 1,930.00" },
+        { id: 5, img: img5, name: "Black Silk Printed Saree with Striped Pattern – Traditional Yet Trendy - Rang Panchami", Price: "₹ 2,249.00" },
+        { id: 6, img: img6, name: "Blue Crepe Silk Saree with Foil Work - Chameli", Price: "₹ 2,380.00" },
+        { id: 7, img: img7, name: "Blue Floral Georgette Saree - Gulabo", Price: "₹ 1,745.00" },
+        { id: 8, img: img8, name: "Blue Floral Georgette Saree - Gulabo", Price: "₹ 1,745.00" },
+        { id: 9, img: img9, name: "Blue Striped Chiffon Saree – Soft, Flowing & Stylish - Rang Panchami", Price: "₹ 2,749.00" },
+        { id: 10, img: img10, name: "Green Chiffon Butti Printed Saree – Soft, Flowing & Stylish Look - Rang Panchami", Price: "₹ 2,799.00" }
         
     ]
     return (
@@ -42,11 +42,16 @@ const Our_Bestsellers = () => {
                 {/* Add your bestsellers content here */}
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 text-ellipsis">
                     {bestsellers.map((item) => (
-                        <a href=""><div  key={item.id} onClick={() => handleProductClick(item)} className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center">
+                        <div 
+                            key={item.id} 
+                            onClick={() => handleProductClick(item)} 
+                            className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center cursor-pointer"
+                            >
                             <img src={item.img} alt={item.name} className="w-full h-auto rounded-lg mb-2" />
                             <h2 className="text-sm font-semibold">{item.name}</h2>
-                            <p className="text-gray-600">{item.price}</p>
-                        </div></a>
+                            <p className="text-gray-600">{item.Price}</p>
+                        </div>
+
                     ))}
                 </div>
                 <div className="flex justify-center">
