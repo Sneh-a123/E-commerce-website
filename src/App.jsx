@@ -1,23 +1,23 @@
 import React from "react";
-import Header from "./Header.jsx"
-import Hero_section from "./Hero_section.jsx";
-import Carosel_section from "./carosel_section.jsx";
-import Shop_by_occation from "./shop_by_occation.jsx"
-import Our_Bestsellers from "./Our_Bestsellers.jsx";
-import Testinomial from "./testinomial.jsx";
-import Footer from "./footer.jsx";
+import { Route, Routes } from "react-router-dom";
+import MainPages from "./pages/MainPages.jsx";
+import ContactUs from "./pages/ContactUs.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import Product from "./layout/Products.jsx";
 
 const App = () => {
   return (
-    <>
-      <Header className="sticky top-0"/>
-      <Hero_section />
-      <Carosel_section />
-      <Shop_by_occation />
-      <Our_Bestsellers />
-      <Testinomial />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<MainPages />} />
+      <Route path="/ContactUs" element={<ContactUs />} />
+      <Route path="/Login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      {/* Ye important hai */}
+      <Route path="/products" element={<Product />} />
+    </Routes>
   );
-}
+};
+
 export default App;

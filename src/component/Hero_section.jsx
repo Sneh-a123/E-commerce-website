@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Image1 from "./assets/Slide-image/slide-1 saree.png";
-import Image2 from "./assets/Slide-image/slide-2 saree.png";
-import Image3 from "./assets/Slide-image/slide-3 saree.png";
-import Image4 from "./assets/Slide-image/slide-4 saree.png";
-import Tag from "./assets/Slide-image/tag.png";
+import Image1 from "../assets/Slide-image/slide-1 saree.png";
+import Image2 from "../assets/Slide-image/slide-2 saree.png";
+import Image3 from "../assets/Slide-image/slide-3 saree.png";
+import Image4 from "../assets/Slide-image/slide-4 saree.png";
+import Tag from "../assets/Slide-image/tag.png";
 
 const images = [Image1, Image2, Image3, Image4];
 
@@ -30,7 +30,7 @@ const Hero_section = () => {
         </div>
       </div>
       <h1 className="font-bold text-xl md:text-4xl">Fashion Sale for Women's</h1>
-      <a href=""><button className="bg-[#ffd782] font-semibold text-black px-4 py-2 text-[16px] md:text-[20px] rounded-2xl transition-all ease-in-out hover:scale-130 cursor-pointer ">
+      <a href="#latest-saree"><button className="bg-[#ffd782] font-semibold text-black px-4 py-2 text-[16px] md:text-[20px] rounded-2xl transition-all ease-in-out hover:scale-130 cursor-pointer ">
         Shop Now
       </button></a>
     </div>

@@ -1,14 +1,14 @@
 import React from "react";
-import image1 from "./assets/occasional_saree/Daily_Wear.webp";
-import image2 from "./assets/occasional_saree/Festival.webp";
-import image3 from "./assets/occasional_saree/Gifting.webp";
-import image4 from "./assets/occasional_saree/Party_Wear.webp";
+import image1 from "../assets/occasional_saree/Daily_Wear.webp";
+import image2 from "../assets/occasional_saree/Festival.webp";
+import image3 from "../assets/occasional_saree/Gifting.webp";
+import image4 from "../assets/occasional_saree/Party_Wear.webp";
 
 const Shop_by_occation = () => {
   const images = [image1, image2, image3, image4];
 
   return (
-    <section className="p-4 md:p-8">
+    <section id="shop-by-occation" className="p-4 md:p-8">
       {/* Heading */}
       <div className="bg-white rounded-2xl shadow-lg py-4 px-6 text-center">
         <h1 className="font-bold text-black text-xl md:text-3xl">

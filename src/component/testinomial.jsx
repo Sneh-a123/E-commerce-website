@@ -45,7 +45,7 @@ const testinomial = () => {
         };
     return (
         <>
-            <section className="p-4 space-y-5">
+            <section id="testimonial" className="p-4 space-y-5">
                 <div className="bg-white rounded-2xl shadow-lg py-4 px-6 text-center">
         <h1 className="font-bold text-black text-xl md:text-3xl">
           Testinomial
