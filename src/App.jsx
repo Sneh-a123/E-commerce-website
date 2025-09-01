@@ -4,7 +4,8 @@ import MainPages from "./pages/MainPages.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-import Product from "./layout/Products.jsx";
+import Product from "./pages/Products.jsx";
+import BuyPage from "./pages/BuyPage.jsx";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/register" element={<Register />} />
       {/* Ye important hai */}
       <Route path="/products" element={<Product />} />
+      <Route path="/buypage" element={<BuyPage />} />
     </Routes>
   );
 };

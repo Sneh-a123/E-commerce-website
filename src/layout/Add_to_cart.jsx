@@ -5,16 +5,24 @@ const Add_To_Cart = ({ isOpen, setIsOpen }) => {
   
 
   // LocalStorage se data load karna
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCart);
-  }, [isOpen]);
+ useEffect(() => {
+  const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+  // agar kisi item me qty missing hai to default 1 kar do
+  const normalized = storedCart.map((p) => ({
+    ...p,
+    qty: p.qty || 1,
+  }));
+  setCartItems(normalized);
+}, [isOpen]);
+
 
 const totalPrice = cartItems.reduce((acc, item) => {
-  const price = parseFloat(String(item.Price).replace(/[^\d.]/g, "")) || 0; // sirf number rakho
+  const price = parseFloat(item.Price?.toString().replace(/[^0-9.]/g, "")) || 0;
   const qty = parseInt(item.qty) || 1;
   return acc + price * qty;
 }, 0);
+
+
 
   // Quantity decrease
   const decreaseQty = (id) => {
@@ -33,6 +41,15 @@ const totalPrice = cartItems.reduce((acc, item) => {
     localStorage.setItem("cart", JSON.stringify(updated));
     setCartItems(updated);
   };
+
+
+  // Remove item from cart
+const removeFromCart = (id) => {
+  const updated = cartItems.filter((p) => p.id !== id);
+  localStorage.setItem("cart", JSON.stringify(updated));
+  setCartItems(updated);
+};
+
 
   if (!isOpen) return null;
 
@@ -87,6 +104,13 @@ const totalPrice = cartItems.reduce((acc, item) => {
                     >
                       +
                     </button>
+                    <button
+  className="px-2 py-1 border rounded cursor-pointer"
+  onClick={() => removeFromCart(item.id)}
+>
+  Remove
+</button>
+
                   </div>
                 </div>
               </div>
@@ -94,13 +118,14 @@ const totalPrice = cartItems.reduce((acc, item) => {
           </div>
 
           {/* Total Price */}
-          <div className="mt-6 border-t pt-3 flex justify-between font-bold">
-            <span>Total:</span>
-            <span>{totalPrice}</span>
-          </div>
+         <div className="mt-6 border-t pt-3 flex justify-between font-bold">
+  <span>Total:</span>
+  <span>₹{totalPrice.toFixed(2)}</span>
+</div>
+
 
           {/* Checkout Button */}
-          <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+          <button className="mt-4 w-full bg-blue-600 text-white py-2 cursor-pointer rounded hover:bg-blue-700">
             Buy The Product
           </button>
         </>

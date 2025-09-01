@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"; // ✅ navigate hook
 import Add_to_cart from "./Add_to_cart.jsx";
+import Image1 from "../assets/Carosel-image/saree1.jpg";
+import Image2 from "../assets/Carosel-image/saree2.jpg";
+import Image3 from "../assets/Carosel-image/saree3.jpg"; 
+import Image4 from "../assets/Carosel-image/saree4.jpg";
+import Image5 from "../assets/Carosel-image/saree5.jpg";
+import Image6 from "../assets/Carosel-image/saree6.jpg";
+import Image7 from "../assets/Carosel-image/saree7.jpg";
+import Image8 from "../assets/Carosel-image/saree8.jpg";
+import Image9 from "../assets/Carosel-image/saree9.jpg";
+import Image10 from "../assets/Carosel-image/saree10.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Hamburger menu
@@ -12,21 +22,28 @@ const Header = () => {
   // const carouselRef = useRef(null);
 
   const handleProductClick = (product) => {
-    navigate("/products", { state: { product } }); // ✅ correct state key
+    if(product.name === "Party Wear" || product.name === "Festival" || product.name === "Daily Wear" || product.name === "Gifting") {
+      // If the product is a category, navigate to the products page with the category name
+      document.getElementById("shop-by-occation")?.scrollIntoView({ behavior: "smooth" }); // ✅ correct state key
+      return;
+    }
+   else{
+       navigate("/products", { state: { product } });
+   } // ✅ correct state key
   };
 
   // Dummy product data
   const products = [
-    { id: 1, name: "Teal and Gold Floral Saree...", price:"₹ 1,050" },
-    { id: 2, name: "Baby Blue Chiffon Floral Printed Saree – Elegant, Lightweight & Stylish- Rang Panchami", price: "₹ 3,299.00" },
-    { id: 3, name: "Baby Pink Georgette Saree with Graceful Lace Border - Kitkat", price: "₹ 1,680.00" },
-    { id: 4, name: "Beige Chiffon Saree with Resham & Stone Work - Aishwrya", price: "₹ 4,960.00" },
-    { id: 5, name: "Black Georgette Saree with Multicolor Abstract Print - Shamli", price: "₹ 1,930.00" },
-    { id: 6, name: "Black Silk Printed Saree with Striped Pattern – Traditional Yet Trendy - Rang Panchami", price: "₹ 2,249.00" },
-    { id: 7, name: "Blue Crepe Silk Saree with Foil Work - Chameli", price: "₹ 2,380.00" },
-    { id: 8, name: "Blue Floral Georgette Saree - Gulabo", price: "₹ 1,745.00" },
-    { id: 9, name: "Blue Floral Georgette Saree - Gulabo", price: "₹ 1,745.00" },
-    { id: 10, name: "Blue Striped Chiffon Saree – Soft, Flowing & Stylish - Rang Panchami", price: "₹ 2,749.00" },
+    { id: 1, img: Image1, name: "Teal and Gold Floral Saree...", price:"₹ 1,050" },
+    { id: 2, img: Image2, name: "Baby Blue Chiffon Floral Printed Saree – Elegant, Lightweight & Stylish- Rang Panchami", price: "₹ 3,299.00" },
+    { id: 3, img: Image3, name: "Baby Pink Georgette Saree with Graceful Lace Border - Kitkat", price: "₹ 1,680.00" },
+    { id: 4, img: Image4, name: "Beige Chiffon Saree with Resham & Stone Work - Aishwrya", price: "₹ 4,960.00" },
+    { id: 5, img: Image5, name: "Black Georgette Saree with Multicolor Abstract Print - Shamli", price: "₹ 1,930.00" },
+    { id: 6, img: Image6, name: "Black Silk Printed Saree with Striped Pattern – Traditional Yet Trendy - Rang Panchami", price: "₹ 2,249.00" },
+    { id: 7, img: Image7, name: "Blue Crepe Silk Saree with Foil Work - Chameli", price: "₹ 2,380.00" },
+    { id: 8, img: Image8, name: "Blue Floral Georgette Saree - Gulabo", price: "₹ 1,745.00" },
+    { id: 9, img: Image9, name: "Blue Floral Georgette Saree - Gulabo", price: "₹ 1,745.00" },
+    { id: 10, img: Image10,  name: "Blue Striped Chiffon Saree – Soft, Flowing & Stylish - Rang Panchami", price: "₹ 2,749.00" },
     { id: 11, name: "Green Chiffon Butti Printed Saree – Soft, Flowing & Stylish Look - Rang Panchami", price: "₹ 2,799.00" },
     { id: 12, name: "Party Wear" },
     { id: 13, name: "Festival" },

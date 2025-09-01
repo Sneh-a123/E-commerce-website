@@ -1,27 +1,28 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Pages_header from "./Pages_header";
+import { Link } from "react-router-dom";
+import Pages_header from "../layout/Pages_header";
 
 const Products = () => {
   const location = useLocation();
   const product = location.state?.product; // ✅ Carousel se aaya hua data
 
   // Agar koi product data nahi mila to error message dikha do
-const handleAddToCart = (product) => {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const handleAddToCart = (product) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Agar product pehle se hai to qty badhao
-  const existing = cart.find((item) => item.id === product.id);
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ ...product, qty: 1 });
-  }
+    // Agar product pehle se hai to qty badhao
+    const existing = cart.find((item) => item.id === product.id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ ...product, qty: 1 });  
+    }
 
-  localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
 
-  alert(`${product.name} added to cart!`);
-};
+    alert(`${product.name} added to cart!`);
+  };
 
 
   if (!product) {
@@ -66,15 +67,15 @@ const handleAddToCart = (product) => {
           {/* Buttons */}
           <div className="flex gap-4 mt-4">
             <button
-  className="bg-yellow-400 cursor-pointer px-5 py-2 rounded-lg font-medium"
-  onClick={() => handleAddToCart(product)}
->
-  Add to Cart
-</button>
-
-            <button className="bg-green-500 text-white px-5 cursor-pointer py-2 rounded-lg font-medium">
-              Buy Now
+              className="bg-yellow-400 cursor-pointer px-5 py-2 rounded-lg font-medium"
+              onClick={() => handleAddToCart(product)}
+            >
+              Add to Cart
             </button>
+
+            <Link to="/buypage"><button className="bg-green-500 text-white px-5 cursor-pointer py-2 rounded-lg font-medium">
+              Buy Now
+            </button></Link>
           </div>
         </div>
       </div>
